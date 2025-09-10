@@ -23,4 +23,20 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+router.put('/:id',async (req,res) => {
+  try{
+    const {id} = req.params;
+    const bookupdate = await Book.findByIdAndUpdate(id, req.body, {new : true});
+    
+
+    if(!updatebook){
+      return res.send(404).json({message : "Book not found"});
+    }
+    res.send(bookupdate);
+  }catch(error){
+    res.status(400).json({message:error.message});
+  }
+} );
+
 export default router;
