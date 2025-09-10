@@ -8,7 +8,7 @@ const bookSchema = new Schema({
   publishedDate: { type: Date },
   copiesAvailable: { type: Number, default: 1 },
   summary: { type: String }
-}, { timestamps: true }); // createdAt & updatedAt
+}, { timestamps: true }); 
 
 const Book =model("Book", bookSchema);
 export default Book;

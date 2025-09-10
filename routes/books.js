@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router(); 
 import Book from "../models/Book.js";
 
-// GET all books
+
 router.get('/', async (req, res) => {
   try {
     const books = await Book.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST a new book
+
 router.post('/', async (req, res) => {
   try {
     const newBook = new Book(req.body);
